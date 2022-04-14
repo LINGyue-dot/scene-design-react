@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/*
+ * @Author: qianlong github:https://github.com/LINGyue-dot
+ * @Date: 2022-04-14 19:48:06
+ * @LastEditors: qianlong github:https://github.com/LINGyue-dot
+ * @LastEditTime: 2022-04-14 20:08:02
+ * @Description:
+ */
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/home";
+import SearchInput from "./pages/search-input";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Routes>
+				<Route path="/" element={<Home />}>
+					<Route path="search-input" element={<SearchInput />} />
+				</Route>
+			</Routes>
+		</div>
+	);
 }
 
 export default App;
